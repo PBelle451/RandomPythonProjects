@@ -16,6 +16,27 @@ def introScene():
         else:
             print("Please insert a valid input.")
 
+def pissChamber():
+    directions = ["left", "forward", "backward"]
+    global torch
+    print("You enter a chamber that smells like urine, you look around but you can barely see what is in front of you. What do you do?")
+    userInput = ""
+    while userInput not in directions:
+        print("Options: left/forward/backward")
+        userInput = input()
+        if userInput == "left":
+            Cultists()
+        elif userInput == "forward":
+            print("You find a torch barely lit in the ground, you pick it up and now you can see more clearly")
+            torch = True
+        elif userInput == "backward":
+            introScene()
+        elif userInput == "right":
+            print("You blindly walk to the right but bumps into a wall")
+        else:
+            print("Please insert a valid option")
+        
+
 if __name__ == '__main__':
     print("Welcome to Call of Cthulhu.")
     print("You are a detective sent to investigate a cult who is trying to summon Cthulhu.")
