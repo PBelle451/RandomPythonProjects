@@ -56,7 +56,7 @@ def altarChamber():
         elif userInput == "left":
             print("You bump into a wall")
         elif userInput == "right":
-            print("YOu bump into a wall")
+            print("You bump into a wall")
         else:
             print("Please insert a valid option")
 
@@ -78,10 +78,59 @@ def diningHall():
         else:
             print("Please insert a valid option")
 
+def oldGear():
+    directions = ["forward", "backward"]
+    global torch
+    global revolver
+    if torch == False:
+        print("It's pitch black, you decide to return to the previous room")
+        diningHall()
+    else:
+        print("You enter a room full of cloth and bags scattered through the floor. It's completly dark and you shine your torch through the room.")
+        userInput = ""
+        while userInput not in directions:
+            print("Options: forward/backward")
+            userInput = input()
+            if userInput == "forward":
+                print("You shine your torch and walk through the room, you look around and find your backpack, you search it up and find your old revolver")
+                revolver == True
+            elif userInput == "backward":
+                diningHall()
+            elif userInput == "right":
+                print("You bump into a wall")
+            elif userInput == "left":
+                print("You bump into a wall")
+            else:
+                print("Please insert a valid option")
+    
+def Cultists():
+    directions = ["forward", "backward"]
+    global revolver
+    global torch
+    global necronomicon
+    print("You enter a room full of cultists. They are kneeling before a sharp-looking monolith. They are all wearing brown robes and are chanting the words Ph'nglui mglw'nafh Cthulhu R'lyeh wgah'nagl fhtagn")
+    userInput = ""
+    while userInput not in directions:
+        print("Options: forward/backward")
+        userInput = input()
+        if userInput == "forward":
+            if revolver == True:
+                print("You grab your revolver and shoot down all the cultists in the room, they all lie dead before you. You walk towards the monolith where you notice a stop that fits a book.")
+                if necronomicon == True:
+                    print("You grab the book you found earlier and you put it in the stop of the altar. The pages have a drawing of Cthulhu and several writings which are unreadable for men. You grab the lighter in your coat and you set fire to the pages.")
+                    print("As the pages burn, you hear a nightmarish growl that echoes through the chamber. The sheer sound of it drives you insane, you collapse and fall to the ground as the whole building collapses before you.")
+                    print("Taking a look to the sky just before you die, you see the cyclopean body of Cthulhu rising from the ocean before you. Cthulhu awakens")
+                    quit()
+                else:
+                    print("You find a trap door near the monolith, you go through it and walk through kilometers of poorly lit tunnels.")
+                    print("You find an exit and find yourself in the town once again. You are able to hitchhike a ride back to the police station.")
+                    print("You report your findings to your boss and the police raid the cult's headquarters. All the cultists remaining were killed or arrested.")
+                    print("The police find the Necronomicon there, it's confiscated and sent to the University of Miskatonic for studies.")
+                    quit()
 
 if __name__ == '__main__':
     print("Welcome to Call of Cthulhu.")
-    print("You are a detective sent to investigate a cult who is trying to summon Cthulhu.")
+    print("You are a detective sent to a town to investigate a cult who is trying to summon Cthulhu.")
     print("While interrogating the townsfolk, you came across a strange man.")
     print("He said his name was Zobek Kell and he knew where the cult was hiding.")
     print("While following him, you were knocked out and kidnapped.")
