@@ -61,16 +61,16 @@ def altarChamber():
             print("Please insert a valid option")
 
 def diningHall():
-    directions = ["left", "right", "backward"]
+    directions = ["left", "backward"]
     print("You enter a room with a large wooden table at the center, you feel a putrid scent upon entering and look at several plates with food that looks inedible.")
     userInput = ""
     while userInput not in directions:
-        print("Options: left/right/backward")
+        print("Options: left/backward")
         userInput = input()
         if userInput == "left":
             oldGear()
         elif userInput == "right":
-            Pantry()
+            print("You bump into a wall")
         elif userInput == "backward":
             introScene()
         elif userInput == "forward":
@@ -126,7 +126,12 @@ def Cultists():
                     print("You find an exit and find yourself in the town once again. You are able to hitchhike a ride back to the police station.")
                     print("You report your findings to your boss and the police raid the cult's headquarters. All the cultists remaining were killed or arrested.")
                     print("The police find the Necronomicon there, it's confiscated and sent to the University of Miskatonic for studies.")
+                    print("God knows what the consequences of your actions will be. You are sent home, as you arrive to your doorsteb you notice a letter with the same symbols you saw during that fateful day.")
                     quit()
+            else:
+                print("The cultists notice you and they run towards you with sacrificial knifes, they stab you multiple times and you fall to the ground dead.")
+                print("Cthulhu Awakens")
+                quit()
 
 if __name__ == '__main__':
     print("Welcome to Call of Cthulhu.")
